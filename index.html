@@ -727,6 +727,105 @@
             color: #fff;
         }
 
+        /* ── RECENT WORK ── */
+        #recent-work {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .work-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 229, 255, 0.3);
+            box-shadow: var(--card-shadow);
+        }
+
+        .work-card-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+        }
+
+        .work-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .work-card:hover .work-card-image img {
+            transform: scale(1.04);
+        }
+
+        .work-card-body {
+            padding: 28px 32px 32px;
+        }
+
+        .work-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--cyan);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .work-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .work-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 22px;
+        }
+
+        .work-link-btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .work-link-btn:hover {
+            background: rgba(0, 229, 255, 0.1);
+            border-color: rgba(0, 229, 255, 0.5);
+            color: #fff;
+        }
+
         /* ── SKILLS ── */
         #skills {
             padding: 100px 60px;
@@ -951,6 +1050,7 @@
             #about,
             #experience,
             #projects,
+            #recent-work,
             #skills,
             #github,
             #contact {
@@ -960,6 +1060,7 @@
 
             .about-grid,
             .projects-grid,
+            .work-grid,
             .skills-grid,
             .github-repos {
                 grid-template-columns: 1fr;
@@ -1004,6 +1105,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#recent-work">Recent Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#github">GitHub</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1201,9 +1303,53 @@
         </div>
     </section>
 
+    <!-- RECENT WORK -->
+    <section id="recent-work" class="reveal">
+        <div class="section-label">04 // Recent Work</div>
+        <h2 class="section-title">Websites I've Built From Scratch</h2>
+
+        <div class="work-grid">
+
+            <!-- Quickads.ai -->
+            <div class="work-card">
+                <div class="work-card-image">
+                    <img src="images/quickads-preview.png" alt="Quickads.ai website preview" loading="lazy" />
+                </div>
+                <div class="work-card-body">
+                    <span class="work-tag">Webflow // AI Ad Platform</span>
+                    <h3 class="work-title">Quickads.ai</h3>
+                    <p class="work-desc">
+                        Built and maintain the marketing site for Quickads, an AI-powered ad creation and campaign management platform — responsive Webflow landing pages, CMS-driven content, and SEO-optimized page structures.
+                    </p>
+                    <a href="https://www.quickads.ai" target="_blank" rel="noopener noreferrer" class="work-link-btn">
+                        www.quickads.ai ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- Oddr -->
+            <div class="work-card">
+                <div class="work-card-image">
+                    <img src="images/oddr-preview.png" alt="Oddr website preview" loading="lazy" />
+                </div>
+                <div class="work-card-body">
+                    <span class="work-tag">Webflow // Legal Revenue Intelligence</span>
+                    <h3 class="work-title">Oddr</h3>
+                    <p class="work-desc">
+                        Built and maintain the marketing site for Oddr, a revenue intelligence platform for law firms — Webflow builds, HubSpot form integrations, and ongoing landing page and CMS work.
+                    </p>
+                    <a href="https://www.oddr.com" target="_blank" rel="noopener noreferrer" class="work-link-btn">
+                        www.oddr.com ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- SKILLS / TECHNICAL EXPERTISE -->
     <section id="skills" class="reveal">
-        <div class="section-label">04 // Technical Expertise</div>
+        <div class="section-label">05 // Technical Expertise</div>
         <h2 class="section-title">Skills &amp; Technical Capabilities</h2>
 
         <div class="skills-grid">
@@ -1265,7 +1411,7 @@
 
     <!-- GITHUB REPOS -->
     <section id="github" class="reveal">
-        <div class="section-label">05 // GitHub Repositories</div>
+        <div class="section-label">06 // GitHub Repositories</div>
         <h2 class="section-title">Open Source Repositories</h2>
 
         <div class="github-repos">
@@ -1294,7 +1440,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="reveal">
-        <div class="section-label">06 // Contact</div>
+        <div class="section-label">07 // Contact</div>
         <h2 class="section-title">Get In Touch</h2>
         <p class="contact-tagline">
             Whether you want to discuss production machine learning models, MLOps architecture, or full-stack AI applications, feel free to reach out.
